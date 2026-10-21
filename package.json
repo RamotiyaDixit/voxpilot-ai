@@ -1,0 +1,20 @@
+{
+  "name": "voxpilot-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Demo-first AI voice agent studio with browser speech, agent management and call analytics.",
+  "workspaces": ["apps/api", "apps/web"],
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,green \"npm run dev -w @voxpilot/api\" \"npm run dev -w @voxpilot/web\"",
+    "build": "npm run build -w @voxpilot/api && npm run build -w @voxpilot/web",
+    "typecheck": "npm run typecheck -w @voxpilot/api && npm run typecheck -w @voxpilot/web",
+    "lint": "npm run lint -w @voxpilot/api && npm run lint -w @voxpilot/web"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
